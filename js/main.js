@@ -19,6 +19,7 @@
     var w1Links = [
         {label: "DS Notes", url: "dsNotes.html"},
         {label: "UX Notes", url: "uxNotes.html"},
+        {label: "Story Editor Example", url: "story_editor.html"}
     ];
 
     // Empty array to make a shallow copy.
