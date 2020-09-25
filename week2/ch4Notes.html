@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 4 Notes</title>
+</head>
+<body>
+    <h1>Chapter 4: Functions</h1>
+    <pre>Function declarations
+
+Normal function declaration using the function keyword
+
+functions name(){}
+
+function expression, declare a function by assigning it to a variable.
+ie. const name = function(){};
+
+this does end with a semicolon
+This does mean function can be made anonymous without a conventional name,
+this does make debugging harder though.
+
+Function constructor
+ie. const name = new Function('code');
+problem with this method is that the contents of the function are put in
+as a string. Other issue is that this method always creates the function
+on the global scope.
+
+Is there ever a time a function constructor would be more advantages than
+the other methods of function declaration? Or is it just there for backwards
+compatability?
+
+from the text:
+
+  Don’t Repeat Yourself,or DRY, is a principle of programming
+  that specifies that every part of a program should only be
+  written once. This avoids duplication and means there’s no need to
+  keep multiple pieces of code up to date and in sync.
+
+trying to invoke a function by name without the parentheses only references
+the function. Can be useful to assign another pointer to a function
+
+All functions have an argument array that holds all arguments passed into a
+function, it can be accessed like an array but is not able to use some
+array methods.
+
+better method is to use the rest operator, which is placed in the last parameter
+place infront of three dots. This will collect all the arguments an put them
+into an array.
+
+As seen in the mean() example the rest operator can be used to accept
+any amount of arguments and store them into an array that can then be
+accessed by the function.
+
+Default parameters as of ES6 you can set defaults for parameters if
+an argument is not provided for that parameter.
+ie. function name(parameter = defaultValue)
+
+prior to this the way to make defualt parameters was to check in the function
+using ||
+ie. name = name || "default";
+if name was empty then it would assign the default parameter.
+only works if empty is recognized by the language as false.
+
+Default parameters should come after non-default parameters.
+
+Arrow syntax => parameters befor the arrow and contents after the arrow
+ie. const name = parameter => content;
+advantages: More succinct, single parameters don't need parentheses.
+if its one line then it doesn't need to be in a block, return is not required
+They don't bind their own value  of "this" to the function.
+
+If the function has no parameters then an empty parentheses is needed.
+When contents require more than one line than a block is need and the value
+of the arrow method is lost
+
+Arrow method is useful for declaring small anonymous functions
+
+callbacks : function passed as argument to another function
+
+read through callbacks again for review.
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 3 Notes</title>
+</head>
+<body>
+    <h1>Chapter 3: Arrays, Logic, Loops</h1>
+    <pre>delete array[i]; used to change the value at i to undefined
+
+destructuring  is taking values out of the array and mking them into
+individual variables, can also be used to swap variables in a more
+efficient manner
+
+array.length, returns length of array. length - 1 gives the last index of
+the array.
+
+this property is mutable, extra slots are filled with undefined, or
+removed.
+
+array.pop() used to return and remove the last item from an array.
+Does not replace it with undefined.
+
+array.shift() same as pop but works with the first item.
+
+array.push(item) puts a new value at the end of the array
+while returning the new length of the array.
+
+array.unshift(item) same as push but puts it as the new first item.
+
+array.concat(arr) is used to merge arrays in to a new array.
+use the = operator to assign the new array.
+
+  An alternative is to use the new spread operator that was added to ES6.
+  The spread operator is three dots, ... that are placed in front of an array,
+  with the effect of spreading out the elements of that array.
+
+.join() can be used to turn all the items of the array into a string seperated
+by commas.
+parameter used to change seperators.
+
+.slice(x,y) used to create a subarray from x index to y.
+Does not change the original array
+
+.splice(x,y,item(s)) places item(s) in place of x, y items will be removed at
+and after x, every value after y is placed in the array. Also returns the
+array that was removed. Can also be used to add items by making y = 0.
+An empty will be returned. splice(x,y) can be used to simply remove values,
+and get a sub array.
+
+.reverse() to reverse order
+
+.sort() used to alphabetically sort string values
+
+.indexOf(item) used to find the index that the item is in, returns -1 if
+item is not in the array.
+
+.includes(item) like indexOf() but returns a true when found and false otherwise
+an extra number parameter can be used to search through after the number index.
+
+spread operator can be used to flatten a multidimensional array into one array.
+
+sets are a data structure that cannot have duplicates.
+
+let name = new Set() must use a constructor.
+array can be used to place values inside Set at time of construction
+ie. new Set([x,y,z]);
+If a string is used as an argument than each letter will get its own place.
+Like always any repeats will be ignored.
+
+.add() adds value to set
+use add to place words.
+All arrays and objects are unique they can have the same values
+but will not be considered duplicates.
+No type coercion so string '2' and 2 are not duplicates.
+
+.size() to get length of set.
+
+.has(item) same as include but does not have index notation
+(so it can't skip ahead)
+
+.delete(item) used to remove the item from the set, returns true if succesful
+false if failed (usually do to the item not being there)
+
+.clear() remove all items from set
+
+set can be converted into array using the spread operator.
+Normal sets are susceptible to memory leaks when deleting arrays or objects
+
+Use WeakSet() for these instances to avoid memory leaks. only arrays and objects
+can be added to weak sets
+
+Maps key value sets
+
+.set(k,v) add a key and value
+
+.get(k) find the key and return the value
+
+.has(key) same as set has
+
+.size() same as set
+
+.delete(k) same as set
+
+.clear() same as set
+
+  Maps can be converted into a nested array of key-value pairs in a similar way
+  to sets; using either the spread operator or the Array.from() method
+
+WeakMaps for the same reason as weak sets
+
+Ternary Operator ?
+
+condition ? (code to run if true):(code to run if false);
+
+alternative to if else
+
+advantage: can make code more succinct
+disadvantage: can be harder to read
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 2 Notes</title>
+</head>
+<body>
+    <h1>Chapter 2: Programming Basics</h1>
+    <pre>variables: value stored in memory
+
+primitive data types -> String, Symbol, Number, Boolean, Undefined, Null
+object (includes arrays, functions, and object literals)
+
+typeof operator used to detect data type (all non-primitive types return
+as type of object)
+
+declaring variables, const for a variable that would be reassigned
+and let for variables that might be reassigned.
+
+const objects can have their underlying data changed.
+it only prevents reassignment of the object.
+
+var isn't used to declare variables anymore due it not having block scope
+block scope meaning their value only exists in the block
+they were declared in
+*note change prior js to use let and const where appropriate.
+
+scope: where a constant or variable is accessible by the program
+
+global scope: declared outside a block. global access (accessible anywhere
+in the program)
+Usually kept to a minimum to avoid name conflicts that can
+cause overwrites.
+
+local scope: only accessible in the block it was declared in.
+
+from the text:
+
+  Variables that start with an underscore generally refer to
+  private properties and methods, so it's best to not
+  follow this convention for your own variable names.
+
+  The $ character is also used by the popular jQuery library,
+  so using this in your variable names may also cause problems.
+
+important to remember that object variables are pointers
+making copies of the pointers will not make seperate objects, they
+will both refer to the same object stored in memory.
+So any changes to a "copy" will cause changes to the original.
+ie. x = {object: 1}, y = x, y.object = 3, now x.object = 3
+
+All properties of primitive data types are immutable,
+meaning they’re unable to be changed.
+
+converting/parsing
+
+String to number: use Number('string') if the string can't be converted it will
+return as NaN
+
+Number to string: use String(number) method.
+Or #..toString(optional to make in binary)
+
+parseInt('string', number base) convert a string representation of a
+number into Number type.
+also can set the base of number.
+This function does ignore decimals (does not round numbers).
+
+parseFloat() works for decimals.
+
+template literals: special type of string that use the ` character.
+Can have javascript expressions inside the string inside a ${script}.
+
+from the text:
+
+  Template literals can be thought of as super-powered strings as
+  they behave in the same way as normal string literals, but with
+  the extra power of string interpolation. For this reason, it is not
+  uncommon to see backticks used to createallstrings in ES6 code.
+
+Symbols: They can be used to create unique values,
+which helps to avoid any naming collisions.
+
+created with the Symbol(), a description can be added in the parenthesis.
+
+Number.isFinite() used to check if it is a number
+
+Number.isNaN() used to check for NaN
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>
