@@ -24,7 +24,8 @@
     const w2Links = [
         {label: "JS Chapter 2 Notes", url: "ch2Notes.html"},
         {label: "JS Chapter 3 Notes", url: "ch3Notes.html"},
-        {label: "JS Chapter 4 Notes", url: "ch4Notes.html"}
+        {label: "JS Chapter 4 Notes", url: "ch4Notes.html"},
+        {label: "Quiz Ninja Example", url: "quizNinja.html"},
     ];
 
     // Empty array to make a shallow copy.
@@ -47,7 +48,7 @@
     let text = "";
 
     // For loop to go through chosen array
-    for (let i = 0; i < links.length; i++){
+    for(let i = 0; i < links.length; i++){
 
         // Create the list element and put it in text
             text += "<li><a href='" + links[i].url + "'>" + links[i].label + "</a></li>";
