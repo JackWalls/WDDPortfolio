@@ -1,0 +1,28 @@
+html{
+    background-color: #666666;
+}
+body{
+    background-color: aliceblue;
+    margin: 3em 3em;
+}
+h2 {
+    margin-left: 15px;
+}
+ol {
+    list-style-type: none;
+}
+a:link, a:visited {
+    background-color: #666666;
+    padding: 25px;
+    font-family: Tahoma;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+a:hover, a:active {
+    background-color: #4d4d4d;
+}
