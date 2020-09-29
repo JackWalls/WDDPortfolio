@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object 'this' Notes</title>
+</head>
+<body>
+    <h1>'this'</h1>
+    <pre>'this' is used in object methods to reference the object use to call the method
+ie. object thing with method display()
+could be referenced within the method as this.variable
+this only works inside methods, not object definitions
+  this do not look at object definition. Only the moment of call matters.
+
+Note from excersise. Js treats number inputs as strings normally, when added
+they concat, multiplication casts them to numbers or returns NaN when
+they are not numbers.
+
+Important note, if you want a function to allow chain function calls,
+ie object.method().method().method();
+then in the method you have return this;
+This will return the object each time allowing for chaining to occur
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>

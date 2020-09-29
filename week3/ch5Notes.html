@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 5 Notes</title>
+</head>
+<body>
+    <h1>Chapter 5: Objects</h1>
+    <pre>
+        Object literals
+objects contents is defined inside {} with variables defined
+as: name: value, no semicolons in besides those in functions,
+declarations seperated by commas.
+
+all properties inside objects are mutable, even when the object is
+declared as a constant.
+
+Can also use the constructor method but that is not recommended
+
+Shorthand method can be used in ES6 by putting assigned variables
+insed of another with {}.
+
+Access properties using dot notation as so Object.property
+if accessing method don't forget the ()
+
+Bracket notation can also be used, advantage that it has is that
+it evaluate expressions and then use that as the reference to the
+property.
+
+Properties can be evaluated inside declaration, this can allow
+for the use of + to concatenate or the ternary operator for example.
+
+The in operator can check if a property is found in an object.
+
+'name' in object
+
+or check if does not return undefined
+
+object.name !== undefined
+
+or use the hasOwnProperty('name')
+
+You can use the for in loop to go through the properties
+in an object
+
+hasOwnProperty() can be used as a check to make sure the loop
+only goes through that objects own properties.
+
+Object.keys('object') returns an array of all the keys
+Object.values('object') same but returns an array of values
+Object.entries('object') same but returns key value pairs
+
+Add properties by assigning them
+
+object.newProperty = value;
+
+changing a property can be done with the assignment operator
+
+The delete operator can be used to remove a property
+ie. delete object.property;
+
+objects can be nested inside of objects, to go down the
+heirarchy you use multiple dots
+
+You can use an object as a parameter, this gives the
+advantage of not needing to worry about the order.
+
+You can use objects to contain methods and properties to avoid naming
+conlficts. This is called a namespace.
+
+JSON.parse(object) can be used to return a js object.
+
+JSON.stringify(object) does the opposite and turns the object
+into a JSON string. Note that it does not add methods to the JSON.
+
+Math object is a namespace used to get commonly used math constants
+and methods.
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>
