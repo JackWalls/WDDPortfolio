@@ -2,7 +2,7 @@ body{
     background-color: azure;
 }
 h2 {
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 2em;
     text-align: center;
@@ -27,7 +27,7 @@ ol {
 a:link, a:visited {
     background-color: #666666;
     padding: 25px;
-    font-family: Tahoma;
+    font-family: Tahoma, sans-serif;
     color: white;
     text-align: center;
     text-decoration: none;
