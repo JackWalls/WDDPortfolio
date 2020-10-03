@@ -1,20 +1,33 @@
-html{
-    background-color: #666666;
-}
 body{
-    background-color: aliceblue;
-    margin: 3em 3em;
+    background-color: azure;
 }
 h2 {
-    margin-left: 15px;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: center;
+    color: Black;
 }
 ol {
     list-style-type: none;
 }
+#header{
+    margin: 3em 10em 0;
+    background-color: white;
+    padding: 1em;
+    border: solid 1px gray;
+    border-bottom-style: none;
+}
+#content {
+    margin: 0 10em;
+    border: solid 1px gray;
+    background-color: white;
+    padding: 1em;
+}
 a:link, a:visited {
     background-color: #666666;
     padding: 25px;
-    font-family: "Tahoma";
+    font-family: Tahoma;
     color: white;
     text-align: center;
     text-decoration: none;
