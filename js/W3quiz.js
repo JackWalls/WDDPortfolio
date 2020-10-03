@@ -1,5 +1,5 @@
 // dialog box to welcome user
-alert('Welcome to Quiz Ninja!');
+//alert('Welcome to Quiz Ninja!');
 
 // create array of objects to store quiz questions and their answers
 const quiz = [
@@ -10,6 +10,7 @@ const quiz = [
 
 // View Object
 const view = {
+    start: document.getElementById('start'),
     score: document.querySelector('#score strong'),
     question: document.getElementById('question'),
     result: document.getElementById('result'),
@@ -19,12 +20,20 @@ const view = {
             target.setAttribute(key, attributes[key]);
         }
         target.innerHTML = content;
+    },
+    show(element){
+        element.style.display = 'block';
+    },
+    hide(element){
+        element.style.display = 'none';
     }
 };
 
 // Will use object game as a namespace
 const game = {
     start(quiz){
+        view.hide(view.start);
+
         // spread quiz to array in game
         this.question = [...quiz];
 
@@ -69,9 +78,11 @@ const game = {
         }
     },
     gameOver(){
+        view.show(view.start);
         view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
     }
 
 };
 
-game.start(quiz);
+view.start.addEventListener('click', () => game.start(quiz), false);
+//game.start(quiz);

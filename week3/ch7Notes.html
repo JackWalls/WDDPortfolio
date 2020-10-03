@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 7 Notes</title>
+</head>
+<body>
+    <h1>Chapter 7: Events</h1>
+    <pre>
+        .addEventListener('event', callback); is used as an event listener for
+a node object.
+
+Without a node object it will instead be applied to the whole page.
+
+Html has inline attributes that can act as event listeners
+they are however not used often due to
+the idea that javascript and html should be kept seperate,
+only one event listener of for each event-type
+can be attached to an element.
+You would have to look for the code in the html to know
+when and where a function is called.
+
+This event listener is not supported in older version of IE 8
+
+When the eventListener is activated it will return an event object as
+a parameter to the callback function. This can be used in a variety of
+ways.
+
+event properties:
+
+.type returns the type of event that activated the listener.
+
+.target returns pointer to the node that fired the event.
+
+.page/client/screenX|Y all return coordinates of where a mouse event occurs
+
+https://developer.mozilla.org/en-US/docs/Web/Events
+Reference to event types
+
+.key property will return the name of the key that fired a key related
+event
+
+.removeEventListener('event', callback) method removes event listeners
+Useful to make events happen only once
+
+.preventDefault can be used to stop a an event from happening(for a hyperlink
+as an example)
+
+Bubbling occurs when you activate a child node, for clicking this can be
+that after clicking on a p element you are also clicking
+on its parent nodes. Bubbling goes up the tree to the root,
+while capturing goes down the tree to the leaf. bubbling is default
+while capturing has to activated.
+
+.stopPropagation() can be used to prevent bubbling and capturing.
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>
