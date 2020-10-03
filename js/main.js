@@ -24,6 +24,7 @@ const w2Links = [
 const w3Links = [
     {label: "Object 'this' Notes", url: "objectThis.html"},
     {label: "JS Chapter 5 Notes", url: "ch5Notes.html"},
+    {label: "JS Chapter 6 Notes", url: "ch6Notes.html"},
     {label: "Quiz Ninja Object Example", url: "quizNinjaObject.html"}
 ];
 /* This function takes a number to select an array of links to

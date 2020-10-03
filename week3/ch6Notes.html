@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 6 Notes</title>
+</head>
+<body>
+    <h1>Chapter 6: The Document Object Model</h1>
+    <pre>
+DOM treats everything on the web page as a node,
+so think of binary trees.
+
+You can assign elements to variables
+
+.nodeType returns number code
+.nodeName, returns name of node in uppercase letters.
+
+node list are like arrays but aren't, they do use index notation but
+they don't have access to array methods. They do have the length property
+
+they can be turned into a an array using Array.from('nodelist)
+or the spread operator
+
+.querySelector() and .querySelectorAll() are great methods that searches
+for a css selector. These are a more precise way to look for objects
+in the document.
+
+.childNodes returns a node list of the all the children of a given element
+
+.children only returns element nodes that are the children of a given node
+
+.firstChild, and .lastChild return the first and last child
+this can at times be a reference to a #text node that is empty
+
+.parentNode returns the parent node of an element
+
+.nextSibling and .previousSibling do as they written, think binary trees
+
+Note if they are to go to an empty node they will return null
+
+3 ways to access the text of a node,
+.firstChild to access the text node of the given element.
+.nodeValue will return the text
+.textContent will do the same as .nodeValue
+IE 8 does not support textContent but can use the innerText property
+which works in a similar way.
+
+.getAttribute('') looks for and returns the value of a given attribute
+for an element. Returns null if the attribute is not there.
+
+.setAttribute('attribute','newValue')
+
+.classList can e used to access of the the classes an element has
+
+it has methods to add('') and remove('') a class, and has toggle('')
+that adds the class if it doesn't have it and removes it if it does
+
+.classList is available on IE 10 and up. You will have
+to make the methods yourself if you wanna use them on older browsers.
+
+.createElement('') method is used create an element node
+
+.createTextNode('') does what it says
+
+in order to add the the text node to the element node you use .appendChild('')
+to put them together.
+
+you can also use the .textContent property to do the same thing.
+
+You can create a function to do all this to avoid repetitive lines of code
+
+parentNode.insertBefore('newNode', 'nodeAfter') this will put a child node
+before the nodeAfter
+
+.removeChild('') used to do what it states
+
+.replaceChild('newNode', 'oldNode')
+
+.getElementsByClassName()
+.getElementsByTagName() return live node list, which mean it updates
+whenever a change is made onto the page.
+
+.style can be used to modify the css of a given element.
+
+Note that css properties that are seperated by dashes are changed
+into camel case.
+
+style.display can be used to make elements dissapear and reappear by
+using the values 'none' and 'block' respectively.
+    </pre>
+    <form>
+        <input type="button" value="Go back!" onclick="history.back()">
+    </form>
+</body>
+</html>
