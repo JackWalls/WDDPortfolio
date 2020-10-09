@@ -4,7 +4,8 @@
 const mLinks = [
     {label: "Week 1", url: "week1/index.html"},
     {label: "Week 2", url: "week2/index.html"},
-    {label: "Week 3", url: "week3/index.html"}
+    {label: "Week 3", url: "week3/index.html"},
+    {label: "Week 4", url: "week4/index.html"}
 ];
 
 // Week 1 page
@@ -28,6 +29,13 @@ const w3Links = [
     {label: "JS Chapter 7 Notes", url: "ch7Notes.html"},
     {label: "Quiz Ninja Object Example", url: "quizNinjaObject.html"}
 ];
+
+const w4Links = [
+    {label: "JS Chapter 8 Notes", url: "ch8Notes.html"},
+    {label: "JS Chapter 12 Notes", url: "ch12Notes.html"},
+    {label: "JS Modular Javascript Notes", url: "modularJS.html"}
+];
+
 /* This function takes a number to select an array of links to
 # then put those links in an ordered list.
 # The choice parameter takes the number from the index.html
@@ -52,6 +60,10 @@ const w3Links = [
             break;
         case 3:
             links = w3Links;
+            break;
+        case 4:
+            links = w4Links;
+            break;
     }
 
     // Empty string to hold new elements to add to html

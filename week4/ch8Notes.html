@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 8 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Chapter 8: Forms</h2>
+    </div>
+    <div id="content">
+        <pre>It is more common to process information with js before sending it
+to server end php/ruby language
+
+document.forms returns a collection of all forms that can be accessed
+by index notation.
+
+you can also use the name attribute of the form to get that form
+
+document.forms.name
+
+can conflict with properties and methods of document.forms so to avoid
+this you can enter the name in an index.
+ie. document.forms['name'].
+
+document.forms['name'].elements returns a collection of
+elements within that form.
+
+As before with the name attribute, it can be used to select a specific
+element.
+
+.submit() can be used to submit the form automatically, does not
+trigger the form submit event.
+
+.reset() will return them to default values, same can be done
+with button with type set to reset.
+
+from the text:
+  Reset buttons are generally considered poor for usability,
+  as they are too easy to click and then wipe out all the data
+  that’s been entered. So think very carefully before using one
+  in a form.
+
+action property can alter the value in the form action attribute.
+
+change event differs from blur in that a change must occur in the
+input field and then lose focus to trigger. blur will trigger if both
+are used but blur triggers after change.
+
+you can add an event listener for submit that will occur before
+the action is made, think of a confirmation dialog box.
+preventDefault() can be used to prevent the action.
+
+.elements['name'].value will give the value in that given element.
+can be used to edit the value in their.
+
+When a value is put in it remains when the user goes to change it.
+
+Checkbox objects have a checked property that returns a boolean.
+
+The value of a radio object is the selected option
+
+The disable attribute can be a good tool to prevent submit from being
+usable until certain requirements are met. these requirements and
+case handling are done in js.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modular JS Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Modular Javascript</h2>
+    </div>
+    <div id="content">
+        <pre>The point of modules is reusability.
+
+All code in module is in strict mode.
+A module has its own global scope
+The value of this in the top level of module is undefined
+No HTML style comments in modules.
+
+export is used to make any values or functions from a module available
+for reuse.
+
+import is used to get the value or function from a module.
+
+import * as name from 'module'; can be used to get all values and functions
+and put them in a namespace.
+
+export default is used to make one variable, function, class available.
+This makes it easier to import without the curly braces. Note
+only one default export is allowed.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

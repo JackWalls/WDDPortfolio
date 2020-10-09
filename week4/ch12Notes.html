@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 12 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Chapter 12: Object Oriented Programming</h2>
+    </div>
+    <div id="content">
+        <pre>Class declaration syntax, which is similar to other languages, is
+the preferred method to create classes.
+
+.constructor property will return the constructor function that
+created that object.
+
+static can be used to call static methods that are called by the class,
+not by the instances.
+ie const instance = new Class(); Class.static() works, instance.static()
+does not.
+
+All classes have a prototype property that contains all the class'
+properties and methods that can be accessed or added to.
+
+.prototype can be used to get the prototype property
+or Object.getPrototypeOf('object')
+
+prototype is live and shared by all instances
+
+Never use arrays or objects as a default value in prototype
+
+to make a variable private you have to declare it as a variable inside the
+class declaration so it remains within the scope of the class.
+In order to modify or access it you need setters and getters.
+
+The root of all class inheritence leads to an instance of an object
+literal as the root of the prototype. That object literal has its own
+methods and properties but they cant be looped through due to being
+enumberable.
+
+An example of monkey-patching is adding methods that are supported in
+older browsers.
+
+Is this also looked down upon in the Javascript community? Why is monkey-
+patching looked down at in general.
+
+variables in a property descriptor value, writable, enumerable, configurable
+are set default by the assignment operator.
+
+use Object.defineProperty(object, 'property', property descriptor)
+to set the values of the descriptor when you add it.
+
+The product descriptor can have getters and setters as get() and set().
+These take the place of the value attribute, you cant have these two
+at the same time. This allows for control over how the assignment operator
+behaves on a property.
+
+This is powerful but should be used with care since it can cause confusion
+
+Object.create(prototype) can be used to create new object with the
+argument to act as the prototype for the new object.
+
+Mixins, adding properties and methods of another object without using
+inheritance.
+
+Object.assign(object1, object2)  will add the properties of object2
+to object, note that arrays or nested objects mixed in this way results
+in shallow copies of those arrays/objects. As in they point to the same
+object, a new one isn't created on the object1. A built function to
+handle this can be use to make deep copies when arrays or objects are
+found there.
+
+From text
+  It’s worth keeping in mind that if a method lacks a meaningful
+  return value, it might as well return this so that chaining is
+  possible.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>
