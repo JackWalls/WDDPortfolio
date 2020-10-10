@@ -38,32 +38,41 @@ const w4Links = [
 
 /* This function takes a number to select an array of links to
 # then put those links in an ordered list.
-# The choice parameter takes the number from the index.html
+# We use the value of title to determine which set of links
+# to display. Using getNum we extract the number value to be
+# used.
 # This is to make it so that any index can come back to this
-# js file.
-# Task to do: Can the object arrays be safely made global
-# or does that not work/bad practice?*/
- function createList(choice){
+# js file.*/
+ function createList(){
     // Empty array to make a shallow copy.
     let links = [];
 
-    // switch case to determine with array to use based on 'choice'
-    switch(choice){
-        case 0:
-            links = mLinks;
-            break;
-        case 1:
-            links = w1Links;
-            break;
-        case 2:
-            links = w2Links;
-            break;
-        case 3:
-            links = w3Links;
-            break;
-        case 4:
-            links = w4Links;
-            break;
+    // get title value
+    const title = document.title;
+
+    // Use getNum to get an array number value for the switch break
+    let choice = getNum(title);
+
+    // check if choice is null for table of contents page, also to check
+    // before accessing the array.
+    if(choice == null)
+        links = mLinks;
+    else {
+        // switch case to determine with array to use based on 'choice'
+        switch (parseInt(choice[0])) {
+            case 1:
+                links = w1Links;
+                break;
+            case 2:
+                links = w2Links;
+                break;
+            case 3:
+                links = w3Links;
+                break;
+            case 4:
+                links = w4Links;
+                break;
+        }
     }
 
     // Empty string to hold new elements to add to html
@@ -79,3 +88,12 @@ const w4Links = [
     // Put the list elements in the ordered list id as list
     document.getElementById("list").innerHTML = text;
 }
+
+// Use regex to return an array of the digits.
+function getNum(string) {
+     const check = /\d+/;
+     return string.match(check);
+}
+
+// Event listener for when page is loaded.
+window.onload = createList;
