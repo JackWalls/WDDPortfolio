@@ -33,7 +33,8 @@ const w3Links = [
 const w4Links = [
     {label: "JS Chapter 8 Notes", url: "ch8Notes.html"},
     {label: "JS Chapter 12 Notes", url: "ch12Notes.html"},
-    {label: "JS Modular Javascript Notes", url: "modularJS.html"}
+    {label: "JS Modular Javascript Notes", url: "modularJS.html"},
+    {label: "Quiz Ninja Form Example", url: "quizNinjaForms.html"}
 ];
 
 /* This function takes a number to select an array of links to
