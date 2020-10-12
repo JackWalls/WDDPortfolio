@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Chapter 10: Testing and Debugging</h2>
+    </div>
+    <div id="content">
+        <pre>From the text
+
+  System error ― there’s a problem with the system or external
+    devices with which the program is interacting.
+
+  Programmer error ― the program contains incorrect syntax or
+    faulty logic; it could even be as simple as a typo.
+
+  User error ― the user has entered data incorrectly, which
+    the program is unable to handle.
+
+Putting 'use strict'; will enable strict mode in order to make
+js crack down harder on what would be referred to as 'poor' programming
+practices.
+
+Linting sounds like a great tool to enforce style, can they be customized
+however in order to support different style choices?
+
+Feature detection to provide error detection in order to handle when
+a user's browser does not support a feature.
+
+Common way to implement breakpoints is to use the dialog box alert().
+
+console.trace() can be used for stack tracing.
+
+using the debugger; keyword can set breakpoints that then use the browsers
+debugger tool. This will then show the variables set before advancing
+the program. Note remove debugger when done testing.
+
+When using throw, it is best to use the error object.
+
+Try and catch are similar to and if else, the condition is that
+if an error is thrown the catch code will execute.
+
+finally is used for a try and catch to execute code after the try catch
+block.
+
+Maybe I should learn to use jest.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

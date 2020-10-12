@@ -37,6 +37,10 @@ const w4Links = [
     {label: "Quiz Ninja Form Example", url: "quizNinjaForms.html"}
 ];
 
+const w5Links =[
+    {label: "JS Chapter 10 Notes", url: "ch10Notes.html"}
+];
+
 /* This function takes a number to select an array of links to
 # then put those links in an ordered list.
 # We use the value of title to determine which set of links
@@ -73,6 +77,8 @@ const w4Links = [
             case 4:
                 links = w4Links;
                 break;
+            case 5:
+                links = w5Links;
         }
     }
 
