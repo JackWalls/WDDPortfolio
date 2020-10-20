@@ -1,19 +1,44 @@
-const toDos = [
+/*const tasks = [
     {id: 1, content: "Task 1", completed: true},
     {id: 2, content: "Task 2", completed: false},
     {id: 3, content: "Task 3", completed: false},
-];
+];*/
+//localStorage.setItem('list',JSON.stringify(tasks));
+let toDos = getList();
 
-function displayList(toDos) {
-    let list = "";
-    for (let i = 0; i < toDos.length; i++){
-        if (toDos[i].completed)
-            list += `<li id="${toDos[i].id}"><input type="checkbox" name="tasks" checked/><strike> ${toDos[i].content} </strike><button>X</button></li>`;
+
+function displayList(toDo) {
+    let elements = "";
+    for (let i = 0; i < toDo.length; i++){
+        if (toDo[i].completed)
+            elements += `<li id="${toDo[i].id}"><input type="checkbox" name="tasks" checked/>
+                <del> ${toDo[i].content} </del><button>X</button></li>`;
         else
-            list += `<li id="${toDos[i].id}"><input type="checkbox" name="tasks"/> ${toDos[i].content} <button>X</button></li>`;
+            elements += `<li id="${toDo[i].id}"><input type="checkbox" name="tasks"/> 
+                    ${toDo[i].content} <button>X</button></li>`;
     }
-    document.querySelector("#list").innerHTML = list;
+    document.querySelector("#list").innerHTML = elements;
     //document.getElementById('list').innerHTML = list;
 }
 
-window.onload = () => displayList(toDos);
+if(getList() !== null)
+    window.onload = () => displayList(toDos);
+
+document.addEventListener('submit', appendList);
+/****************************************************/
+
+function getList() {
+    return JSON.parse(localStorage.getItem('list'));
+}
+
+function appendList(event) {
+    const input = document.forms[0].addTo.value;
+    const add = {id: Date.now(), content: input, completed: false};
+    toDos.unshift(add);
+    localStorage.setItem('list',JSON.stringify(toDos));
+    displayList(toDos);
+    event.preventDefault();
+}
+
+
+//function findIndexById(){};
