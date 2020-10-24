@@ -10,13 +10,40 @@ ul {
 }
 li {
     padding: .5em;
-    width: 10.9em;
+    width: 26.5em;
     border: 1px solid black;
     border-bottom: none;
 }
 li:last-child{
     border-bottom: 1px solid black;
 }
+
+button {
+    float: right;
+}
+#sort {
+    margin-left: 2.5em;
+    width: 26.5em;
+}
 #form {
     margin-left: 2.5em;
 }
+
+#addTo {
+    width: 29.5em;
+}
+
+/*.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.container input:checked ~ .container {
+    background-color: #2196F3;
+}
+
+.container:hover{
+    background-color: #ccc;
+}*/

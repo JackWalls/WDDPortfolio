@@ -6,7 +6,8 @@ const mLinks = [
     {label: "Week 2", url: "week2/index.html"},
     {label: "Week 3", url: "week3/index.html"},
     {label: "Week 4", url: "week4/index.html"},
-    {label: "Week 5", url: "week5/index.html"}
+    {label: "Week 5", url: "week5/index.html"},
+    {label: "Week 6 Midterm", url: "week6/toDoList.html"}
 ];
 
 // Week 1 page
@@ -38,9 +39,11 @@ const w4Links = [
     {label: "Quiz Ninja Form Example", url: "quizNinjaForms.html"}
 ];
 
-const w5Links =[
+const w5Links = [
     {label: "JS Chapter 10 Notes", url: "ch10Notes.html"}
 ];
+
+const w6Links =[];
 
 /* This function takes a number to select an array of links to
 # then put those links in an ordered list.

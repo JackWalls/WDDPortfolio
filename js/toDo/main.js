@@ -13,6 +13,7 @@ window.onload = () => {
     // This function solves the issue mentioned in the function header.
     function resetListeners() {
         // If the list is empty then do nothing.
+        buttons = document.querySelectorAll('.remove');
         if(buttons.length > 0) {
             // For older browsers it is important to remove all lost event listeners to avoid a memory leak.
             buttons.forEach(button => {
