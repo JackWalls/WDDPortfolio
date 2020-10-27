@@ -1,4 +1,3 @@
-
 // Create the links for each index for each week
 // Main Table of Contents page
 const mLinks = [
@@ -7,7 +6,8 @@ const mLinks = [
     {label: "Week 3", url: "week3/index.html"},
     {label: "Week 4", url: "week4/index.html"},
     {label: "Week 5", url: "week5/index.html"},
-    {label: "Week 6 Midterm", url: "week6/toDoList.html"}
+    {label: "Week 6 Midterm", url: "week6/toDoList.html"},
+    {label: "Week 7", url: "week7/index.html"}
 ];
 
 // Week 1 page
@@ -43,15 +43,21 @@ const w5Links = [
     {label: "JS Chapter 10 Notes", url: "ch10Notes.html"}
 ];
 
-const w6Links =[];
+const w6Links = [];
 
-/* This function takes a number to select an array of links to
-# then put those links in an ordered list.
-# We use the value of title to determine which set of links
-# to display. Using getNum we extract the number value to be
-# used.
-# This is to make it so that any index can come back to this
-# js file.*/
+const w7Links = [
+    {label: "JS Chapter 11 Notes", url: "ch11Notes.html"}
+];
+
+/****************************************************************
+ *  This function takes a number to select an array of links to
+ *  then put those links in an ordered list.
+ *  We use the value of title to determine which set of links
+ *  to display. Using getNum we extract the number value to be
+ *  used.
+ *  This is to make it so that any index can come back to this
+ *  js file.
+ *  */
  function createList(){
     // Empty array to make a shallow copy.
     let links = [];
@@ -83,6 +89,10 @@ const w6Links =[];
                 break;
             case 5:
                 links = w5Links;
+                break;
+            case 7:
+                links = w7Links;
+                break;
         }
     }
 

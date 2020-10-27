@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 11 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Chapter 11: Further Functions</h2>
+    </div>
+    <div id="content">
+        <pre>Functions contain a length property that returns the number of
+parameters a function has.
+
+functions can be treated as methods to gain access to 'this'
+by using the function.call(object) method, any parameters needed
+are put after the first parameter.
+The first parameter can be set to null to make a call to
+the function.
+
+.apply(object, [args]) works the same way but all other
+arguments are stored in an array, which can be used to
+have an array as a parameter.
+
+You can add properties to functions as if it was an object
+
+Memoization is used to handle repeated arguments used on a
+function that is expensive to run, by using the arg as an index
+for an array property cache, we can make it so that if an
+argument is provided we can store it in the cache property
+and go to it instead of running the function again.
+
+Is it reasonable to use this for expensive computational functions
+that require multiple arguments? Probably depends on the
+repetitive use of the combination of arguments.
+
+IIFE immediately invoked function are anonymous functions
+invoked immediately after they are declared
+could be useful for making global variables or quick functions
+to keep variables inside its scope.
+Can be used to create temporary functions that disappear after
+use.
+
+Placing all your code in a IIFE can be used to make 'use strict'
+block so that it does not effect the entire js file.
+useful for working with others that don't use it.
+
+Functions can redefine themselves within themselves.
+Note any properties created will be lost when redefined.
+
+Can be used to check for older browsers not having certain
+functions in order to make subsequent use more effective.
+
+error first callbacks - look more into this.
+
+Promise - future result of an asynchronous operation
+**Practice making and using promises
+
+What is considered more effective? Async or promises? Are there
+circumstances where one is better than the other?
+
+Functions can be used to return functions
+
+Is this similar to a factory?
+
+I used a closure for my To-Do application in order to make
+a function have access to an array within the scope of the
+outer function.
+
+by returning the inner function you create a function call
+that has access to the full scope of the outer function and
+nested function.
+
+Generator functions are iterable functions that keeps the
+value of yield(return) and uses it for the next invocation
+of next(). It is assigned to a variable that will maintain
+the sequent values of yield for that variable for the life
+of the program
+
+Pure function
+Return value is dependent only on the values provided by the
+arguments.
+
+No side effects, no changes to value or data outside of the
+scope of the function
+
+f(x) = y always
+
+therefore pure functions must have
+
+at least one argument and a return value.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>
