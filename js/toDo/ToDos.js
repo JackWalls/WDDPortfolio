@@ -11,7 +11,8 @@ export default {
 // a getId function that will set it globally within
 // the scope of the class.
 const key = 'list';
-let toDos = ls.getJSON(key);
+
+let toDos = ls.getJSON(key) || [];
 
 /*******************************************************************
  * This function tasks care of displaying the list elements by
