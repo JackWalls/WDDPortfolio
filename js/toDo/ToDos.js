@@ -12,7 +12,7 @@ export default {
 // the scope of the class.
 const key = 'list';
 
-let toDos = ls.getJSON(key) || [];
+let toDos = ls.getJSON(key);
 
 /*******************************************************************
  * This function tasks care of displaying the list elements by
@@ -59,6 +59,8 @@ function appendList(event) {
     // Get the input from the user
     const input = document.forms[0].addTo.value;
 
+    if (toDos === null)
+        toDos = [];
     // Form validation to alert the user to enter a task
     // within 50 chars.
     if(input === '')
