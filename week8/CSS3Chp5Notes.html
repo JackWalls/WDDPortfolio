@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 Chp 5 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>HTML5 and CSS3 Chapter 5: Transforms and Transitions</h2>
+    </div>
+    <div id="content">
+        <pre>Work with the transform property, works with functions
+
+translate(x, y) moves element from x left and y top
+
+for older versions:
+-webkit-transform: translate(45px,-45px); /* iOS8, Android
+↵4.4.3, BB10 */
+-ms-transform: translate(45px,-45px); /* IE9 only */
+
+use of translateX() and translateY() are used to focus on
+their respective position.
+
+scale(x, y) scales the element based on the argument, if only
+one argument is provided and is used as a scaling ratio so 1
+does not change anything and 2 doubles the proportion
+
+Multiple transform functions should be placed in the same transform
+declaration, multiple transforms overwrite each other.
+
+Scaling does not cause reflow like the height and width property
+
+rotate works by angle value provided as the argument such as
+degrees, grads, radians, or turns.
+
+skew(x, y) skews the element by degrees provided, first arg
+skews on the x axis and the other is y axis, if second parameter
+is omitted only the x axis is skewed.
+
+The origin of the transform is defaulted to the center of the
+element.
+
+you can change it by altering the value for the transform-origin
+property by percentages or position (top, center, bottom, .etc)
+
+Order of the transform functions do matter.
+
+transition is used to for animations
+
+from the text:
+ The important point to note is that the transition is declared
+ in the default or originating state. The -webkit- vendor
+ prefix is still needed for older mobile devices, including
+ iOS6.1, BlackBerry10, Android 4.3 and UC Browser for
+ Android. All other browsers, including IE10 and Android 4.4
+ browser support the un-prefixed syntax.
+
+transition-property is used to define the properties to be
+transitioned. For multiple properties, use commas to seperate.
+
+transition-duration set the duration of the transition in ms or
+s. 200ms is considered optimum.
+
+transition-timing-function is used to have more control over
+the pace of the transition.
+
+transition-delay property is used to incur a delay before the
+transition in either ms or s. useful for hover with a 50ms delay
+
+Animation is based on the use of keyframes. The main key frames
+is from and to, which is the start and end of the animation, or
+through the use of percentages to determine a beginning or end.
+
+To declare an animation you use the property animation-name
+and assign the animation to it.
+
+animation-duration is similar to transition duration.
+
+animation-timing-function similar to transition counterpart.
+
+animation-iteration-count lets you set how many times the animation
+will loop through. default is 1 and max is infinite.
+
+animation-direction can be use to change the way the animation
+plays.
+
+animation-delay is similar to it's counterpart
+
+animation-fill-mode defines what happens before and after the
+animation life cycle
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

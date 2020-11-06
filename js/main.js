@@ -7,7 +7,8 @@ const mLinks = [
     {label: "Week 4", url: "week4/index.html"},
     {label: "Week 5", url: "week5/index.html"},
     {label: "Week 6 Midterm", url: "week6/toDoList.html"},
-    {label: "Week 7", url: "week7/index.html"}
+    {label: "Week 7", url: "week7/index.html"},
+    {label: "Week 8", url: "week8/index.html"}
 ];
 
 // Week 1 page
@@ -50,6 +51,12 @@ const w7Links = [
     {label: "JS Chapter 13 Notes", url: "ch13Notes.html"},
     {label: "ES Exercise set 5", url: "ExerciseCh5.html"},
     {label: "ES Exercise set 6", url: "ExerciseCh6.html"}
+];
+
+const w8Links = [
+    {label: "CSS3 Chapter 5 Notes", url: "CSS3Chp5Notes.html"},
+    {label: "CSS3 Chapter 12 Notes", url: "CSS3Chp12Notes.html"},
+    {label: "PokeList Exercise", url: "pokeList.html"}
 ];
 
 /****************************************************************
@@ -96,6 +103,11 @@ const w7Links = [
             case 7:
                 links = w7Links;
                 break;
+            case 8:
+                links = w8Links;
+                break;
+            default:
+                links = mLinks;
         }
     }
 

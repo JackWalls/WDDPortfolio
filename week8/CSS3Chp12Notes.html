@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 Chp 12 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>HTML5 and CSS3 Chapter 12: Canvas, SVG, and Drag and Drop</h2>
+    </div>
+    <div id="content">
+        <pre>Canvas API used to draw images with JS
+
+Starts with having a canvas element, text in between shows
+only when canvas is not supported
+
+must set height and width within html, not css
+Also canvas has no default styling.
+
+In js you need to get the canvas element and a 2d context from
+it.
+
+We use the context ot alter the properties and then use methods
+to draw the objects.
+
+Canvas has a coordinate system but it works differently in that
+0,0 is on the top right, and if size is x 200 y 200 then
+200, 200 is on the bottom right corner.
+
+createPattern is a method that is used to use an image for a pattern
+that can be use for the fillStyle property.
+
+In order to create different shapes you need a function to handle the
+pathing that will draw the new shape.
+
+To save the image created we use the toDataURL method to
+get a url with a png or jpg of the drawing.
+
+You can redraw images onto canvas using the drawImage method
+which takes the image element and x and y coordinates (for
+placement) as its arguments.
+
+The advantage of canvas is that you get can get access to
+the data property of the image.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>
