@@ -62,7 +62,7 @@ const w8Links = [
 
 const w9Links = [
     {label: "JS Chapter 9 Notes", url: "ch9Notes.html"},
-    {label: "JS Chapter 12 Notes", url: "ch12Notes.html"}
+    {label: "JS Chapter 14 Notes", url: "ch14Notes.html"}
 ];
 
 /****************************************************************
