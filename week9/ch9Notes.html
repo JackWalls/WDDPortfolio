@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 9 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Chapter 9: The Window Object</h2>
+    </div>
+    <div id="content">
+        <pre>windows is a global object,
+
+has methods for 3 dialogs
+
+navigator property that is an object contains info of the browser
+and os being used, found in the userAgent property.
+This is not reliable.
+
+the location property has properties that tells you about the
+current url
+
+history property has access to previously visited pages.
+
+window.open() can be used to make a popup
+close() is implied
+
+moveTo() moves the window to X and Y coordinates.
+
+resizeTo() changes the height and width of the window
+
+window.screen has access to height and width which tells you the
+height and width of the users screen
+
+avail prefix can give that data without os menus
+
+The screen object is more useful for mobiles, main one being a
+change in its orientation.
+
+to create a cookie you assign a value to the document cookie
+property, as a key value pair as 'key=value', assigning values
+to it does not overwrite values, only appends to it. To change
+the value you use the key and assign it the new value by
+assigning it back to cookie as 'key=newValue'.
+
+To read the contents of the cookie you call the property.
+You can use the split method to break the string.
+
+cookies expire after the browser is closed by default, to set
+an expriration date by assigning a value to cookie as
+'; expires=date' where date is a string in the UTC format
+
+can set the path so the cookie can be read by other pages in the
+directory, for it to be read by any page in the root
+directory you set '; path=/'
+
+from text:
+ Adding the string ; secure to the end of a cookie will
+ ensure it’s only transmitted over a secure HTTPS network.
+
+To delete a cookie you set it to expire in the past.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

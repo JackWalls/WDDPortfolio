@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Chapter 14 Notes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Chapter 14: HTML5 APIs</h2>
+    </div>
+    <div id="content">
+        <pre>data attribute
+from text
+    Start with data- .
+
+    Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.
+
+    Include an optional string value.
+
+Attributes to be used only by the JS
+Used to filter or gain access to using the property dataset,
+the name of the data attribute (minus 'data-') is then a property of
+dataset. Also ignore hyphens when accessing the property.
+
+Websockets allow a two way communication channel with a server
+
+Websockets are initialized with constructor with a url to a
+websocket.
+
+When the websocket objects connects to the web socket, it fires
+an open event that can be picked up by an event listener.
+
+the send(value) method is used to send data to the websocket.
+
+When the connection object waits for a response from the
+web socket. This creates the event 'message' that can be
+picked up by the event listener.
+
+other events: close for when connection is closed and error
+when an error has occurred.
+
+Notification API uses the os notification popup. it will be
+displayed to the user even if the page is not the focus.
+
+In order to use you must get permission by using the
+requestPermision() method from a Notification object
+from window.
+
+This results in a promise where notification's permission
+property is set to granted or denied. If granted then you can create
+a Notification object.
+
+audio and video elements handle multimedia in the HTML
+media api grants control over these using js
+
+localStorage is from the web storage api which has greater
+capacity and doesn't expire like cookies do
+
+Geolocation API is accessed via the navigator object by the
+geolocation property.
+
+getCurrentPosition(callback) returns a position object with
+coords property along with latitude and longitude property.
+
+position also have several properties, speed, altitude, heading
+(direction device is moving in), and timestamp.
+
+the watchPosition(callback) method updates position and calls
+the callback whenever a update to position occurs.
+
+Worker object used to enable multi-threading, the worker object
+is constructed taking a js file to process once it has been
+downloaded.
+
+Look more into how workers work.
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>
