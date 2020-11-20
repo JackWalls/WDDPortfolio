@@ -9,7 +9,8 @@ const mLinks = [
     {label: "Week 6 Midterm", url: "week6/toDoList.html"},
     {label: "Week 7", url: "week7/index.html"},
     {label: "Week 8", url: "week8/index.html"},
-    {label: "Week 9", url: "week9/index.html"}
+    {label: "Week 9", url: "week9/index.html"},
+    {label: "Final Weeks", url: "block2Challenge/index.html"}
 ];
 
 // Week 1 page
@@ -65,6 +66,11 @@ const w9Links = [
     {label: "JS Chapter 14 Notes", url: "ch14Notes.html"}
 ];
 
+const finalLinks = [
+    {label: "Reaction Test", url: "reactionTest.html"},
+    {label: "Week 10 Notes", url: "week10/week10Notes.html"}
+];
+
 /****************************************************************
  *  This function takes a number to select an array of links to
  *  then put those links in an ordered list.
@@ -114,6 +120,9 @@ const w9Links = [
                 break;
             case 9:
                 links = w9Links;
+                break;
+            case 10:
+                links = finalLinks;
                 break;
             default:
                 links = mLinks;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Week 10 Notes</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+    <div id="header">
+        <h2>Client Side and Fetch Notes</h2>
+    </div>
+    <div id="content">
+        <pre>Makes informing the user to fix their inputs faster.
+
+Server side form validation is still important since malicious
+users can bypass client-side validation.
+
+HTML5 has built in validation that performs faster but is
+less customizable.
+
+built-in
+
+required - form field needs to be filled before submitting
+
+min max, minlength max length
+
+type - specifies type of data (number, email, or other preset)
+
+pattern - look into what this means.
+
+There is a :valid CSS pseudo-class that can put styles on
+valid elements.
+
+Same for :invalid
+
+If using the required filled then you should inform the user
+of it.
+
+pattern uses regex
+
+Constraint Validation provides properties and methods
+for Js.
+Validity property returns a ValidityState that contains properties
+pertaining the attributes of the form element.
+
+setCustomValidity(message) is used to create and add a custom
+error message to the element.
+
+form attribute novalidate turns off browser's automatic validation
+this prevents the browser from showing its error messages
+allowing us to put in our custom ones.
+        </pre>
+        <pre>fetch can receive cross site cookies
+
+fetch can have a second argument as an init object that can
+be used to customize settings for the fetch
+        </pre>
+        <form>
+            <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</body>
+</html>

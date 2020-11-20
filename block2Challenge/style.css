@@ -1,0 +1,18 @@
+body{
+    margin: 5em;
+}
+#wait {
+    background-color: #CF142B;
+}
+
+#active{
+    background-color: #33A532;
+}
+
+.hide {
+    display: none;
+}
+
+#replay {
+    background-color: #32A59E;
+}
