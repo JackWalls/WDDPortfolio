@@ -7,19 +7,21 @@ const text = document.getElementById("message");
 const replay = document.getElementById("replay");
 
 //
-const currProfile = document.getElementById("currProfile");
+const save = document.forms[0];
 
 // Get elements for Data
 const mean = document.getElementById("mean");
 const list = document.getElementById("profileList");
-const save = document.forms[0];
+const table = document.getElementById("resultTable");
+const currProfile = document.getElementById("currProfile");
+
 
 // Create instance of rTest.
 const rTest = new RTest(button, text, replay);
 
 window.onload = () => {
     // Create instance of Data
-    const data = new Data(mean, undefined, list, currProfile);
+    const data = new Data(mean, table, list, currProfile);
 
     list.addEventListener('change', event => {
         if(event.target.value !== '-1')

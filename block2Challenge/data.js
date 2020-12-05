@@ -1,11 +1,11 @@
-let profiles = [
-    {name: "Ben", results: [150, 200], length: 2}
-    ];
+'use strict';
 import ls from './ls.js';
+const key = "reactionTimeTest_by_JackWalls";
+
+
 export default class Data {
     constructor(mean, table, list, currProfile) {
-        //this.profiles = ls.getProfiles();
-        this.profiles = profiles;
+        this.profiles = ls.getJSON(key) !== null ? ls.getJSON(key) : [];
         this.record = {name: '', results: [], length: 0};
         this.mean = mean;
         this.table = table;
@@ -13,6 +13,7 @@ export default class Data {
         this.currProfile = currProfile;
         this.index = -1;
         this.initList();
+        this.initTable();
         this.updateMean();
     }
 
@@ -26,9 +27,10 @@ export default class Data {
         this.record.length++;
         if(this.index !== -1)
             this.profiles[this.index] = this.record;
+        ls.setJSON(key, JSON.stringify(this.profiles));
         this.updateMean();
         console.log(this.profiles);
-        //this.updateTable(entry);
+        this.updateTable(entry);
     }
 
     /************************************************************************************************
@@ -40,7 +42,7 @@ export default class Data {
         else {
             let sum = 0;
             this.record.results.forEach(element => sum += element);
-            this.mean.innerText = sum / this.record.length;
+            this.mean.innerText = (Math.round(sum / this.record.length)).toFixed(2);
         }
     }
 
@@ -49,7 +51,9 @@ export default class Data {
      * @param entry
      */
     updateTable(entry){
-        let rowEntry = `<tr>`;
+        let newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${this.record.length}</td><td>${entry} milliseconds</td>`;
+        this.table.appendChild(newRow);
     }
 
     /************************************************************************************************
@@ -62,7 +66,7 @@ export default class Data {
             this.record = this.profiles[this.index];
             this.currProfile.innerText = this.record.name;
             this.updateMean();
-            //this.updateTable();
+            this.initTable();
         }
     }
 
@@ -79,15 +83,15 @@ export default class Data {
                 this.record.name = name;
                 this.profiles.push(this.record);
                 this.index = this.profiles.length - 1;
-                console.log(this.index);
+                ls.setJSON(key, JSON.stringify(this.profiles));
                 this.updateList(this.record);
                 this.currProfile.innerText = this.record.name;
             }
             else {
                 this.profiles.push({name: name, results: [], length: 0});
+                ls.setJSON(key, JSON.stringify(this.profiles));
                 this.updateList({name: name, results: [], length: 0});
             }
-            console.log(this.profiles);
             return 1;
         }
         return 0;
@@ -115,5 +119,12 @@ export default class Data {
         // Append to list
         this.list.appendChild(newOption);
 
+    }
+
+    initTable() {
+        let rowEntry = `<tr><th>Results:</th></tr>`;
+        if(this.record.length !== 0)
+            this.record.results.forEach((result, i) => rowEntry += `<tr><td>${i+1}</td><td>${result} milliseconds</td></tr>`);
+        this.table.innerHTML = rowEntry;
     }
 }
