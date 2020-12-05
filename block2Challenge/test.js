@@ -90,9 +90,9 @@ export default class RTest {
 
             // Activate button
             e.target.addEventListener('click', function handler(event) {
-                // Call the endFunction first before removing listener for accuracy.
-                RTest.endFunction(event, that);
-                event.target.removeEventListener('click', handler);
+                    // Call the endFunction first before removing listener for accuracy.
+                    RTest.endFunction(event, that);
+                    event.target.removeEventListener('click', handler);
             });
 
             // On the assumption of speed of the process, the difference

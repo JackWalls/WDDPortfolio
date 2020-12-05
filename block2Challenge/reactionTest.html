@@ -7,10 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p id="message"></p>
-    <button class="hide" id="active">Start</button>
-    <button id="replay">Take the Test</button>
+    <div>
+        <p id="currProfile">---</p>
+    </div>
+    <div id="test">
+        <p id="message"></p>
+        <button class="hide" id="active">Start</button>
+        <button id="replay">Take the Test</button>
+    </div>
 
+    <p id="mean"></p>
+
+    <form id="profile">
+        <label for="newName"> Enter name for profile:
+        <input type="text" id="newName" name="newName">
+        </label>
+        <input type="submit" value="Save">
+    </form>
+
+    <br>
+
+    <label for="profileList">List of Profiles:
+        <select id="profileList" name="profileList">
+        </select>
+    </label>
 
 </body>
 </html>
