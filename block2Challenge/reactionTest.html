@@ -8,22 +8,33 @@
 </head>
 <body>
     <h1>Reaction Time Test</h1>
+
     <div>
         <p id="currProfile">---</p>
     </div>
+
+    <br>
+
     <div id="test">
         <p id="message"></p>
-        <button class="hide" id="active">Start</button>
-        <button id="replay">Take the Test</button>
+        <div id="outerCircle">
+            <button class="hide" id="active">Start</button>
+            <button id="replay">Take the Test</button>
+        </div>
     </div>
 
+    <br>
+
+        <div id="meanBorder">
+            <span id="meanCount">Take the test</span>
+        </div>
     <p id="mean"></p>
 
     <form id="profile">
-        <label for="newName"> Enter name for profile:
-        <input type="text" id="newName" name="newName">
+        <label for="newName"> Enter your name to save a record: <br>
+        <input type="text" id="newName" name="newName" placeholder="Enter Name...">
         </label>
-        <input type="submit" value="Save">
+        <input type="submit" id="save" value="Save">
     </form>
 
     <br>
@@ -32,6 +43,8 @@
         <select id="profileList" name="profileList">
         </select>
     </label>
+
+    <br><br>
 
     <table id="resultTable">
     </table>

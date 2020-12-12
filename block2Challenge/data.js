@@ -4,10 +4,11 @@ const key = "reactionTimeTest_by_JackWalls";
 
 
 export default class Data {
-    constructor(mean, table, list, currProfile) {
+    constructor(mean, meanCount, table, list, currProfile) {
         this.profiles = ls.getJSON(key) !== null ? ls.getJSON(key) : [];
         this.record = {name: '', results: [], length: 0};
         this.mean = mean;
+        this.meanCount = meanCount;
         this.table = table;
         this.list = list;
         this.currProfile = currProfile;
@@ -23,13 +24,11 @@ export default class Data {
      */
     addEntry(entry) {
         this.record.results.push(entry);
-        console.log(this.record.results);
         this.record.length++;
         if(this.index !== -1)
             this.profiles[this.index] = this.record;
         ls.setJSON(key, JSON.stringify(this.profiles));
         this.updateMean();
-        console.log(this.profiles);
         this.updateTable(entry);
     }
 
@@ -37,12 +36,15 @@ export default class Data {
      * Update mean displayed to user.
      */
     updateMean(){
-        if(this.record.length === 0)
+        if(this.record.length === 0) {
+            this.meanCount.innerText = "Take the test";
             this.mean.innerText = '---';
+        }
         else {
+            this.meanCount.innerText = `Your Average Time out of ${this.record.length} Tests`;
             let sum = 0;
             this.record.results.forEach(element => sum += element);
-            this.mean.innerText = (Math.round(sum / this.record.length)).toFixed(2);
+            this.mean.innerText = (Math.round(sum / this.record.length)).toFixed(2) + " milliseconds";
         }
     }
 
@@ -52,7 +54,9 @@ export default class Data {
      */
     updateTable(entry){
         let newRow = document.createElement('tr');
-        newRow.innerHTML = `<td>${this.record.length}</td><td>${entry} milliseconds</td>`;
+        newRow.innerHTML = `<td style="text-align: left; width: 3.5em;">${this.record.length}</td>
+                            <td style="text-align: left">${entry}</td>
+                            <td style="text-align: right; border-right: 1px solid black;">milliseconds</td>`;
         this.table.appendChild(newRow);
     }
 
@@ -64,7 +68,7 @@ export default class Data {
         if(this.record.name !== username) {
             this.index = this.profiles.findIndex((record) => record.name === username);
             this.record = this.profiles[this.index];
-            this.currProfile.innerText = this.record.name;
+            this.currProfile.innerText = "Current Profile: " + this.record.name;
             this.updateMean();
             this.initTable();
         }
@@ -78,7 +82,7 @@ export default class Data {
      */
     saveProfile(name) {
         // Only add if there is not record of the same name
-        if(this.profiles.find(record => record.name === name) === undefined) {
+        if((this.profiles.find(record => record.name === name) === undefined) && name !== '') {
             if(this.index === -1) {
                 this.record.name = name;
                 this.profiles.push(this.record);
@@ -122,9 +126,12 @@ export default class Data {
     }
 
     initTable() {
-        let rowEntry = `<tr><th>Results:</th></tr>`;
+        let rowEntry = `<tr><th colspan="3">Results:</th></tr>`;
         if(this.record.length !== 0)
-            this.record.results.forEach((result, i) => rowEntry += `<tr><td>${i+1}</td><td>${result} milliseconds</td></tr>`);
+            this.record.results.forEach((result, i) => rowEntry +=
+                `<tr><td style="text-align: left; width: 3.5em;">${i+1}</td>
+                <td style="text-align: left">${result}</td>
+                <td style="text-align: right; border-right: 1px solid black;">milliseconds</td></tr>`);
         this.table.innerHTML = rowEntry;
     }
 }

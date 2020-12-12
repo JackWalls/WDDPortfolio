@@ -17,11 +17,13 @@ export default class RTest {
      * @param button: Multi-use button element.
      * @param text: Element used to display text to the user.
      * @param replay: Button to handle reinitialization of the test.
+     * @param test: Div element to change background color.
      */
-    constructor(button, text, replay) {
+    constructor(button, text, replay, test) {
         this.button = button;
         this.text = text;
         this.replay = replay;
+        this.test = test;
         this.done = false;
         this.result = 0;
         this.doneListener = function() {};
@@ -41,8 +43,8 @@ export default class RTest {
         let that = this;
 
         // Swap the replay button with the multi-use button.
-        this.replay.setAttribute('class', 'hide');
-        this.button.setAttribute('class', '');
+        this.replay.setAttribute('style', 'display: none');
+        this.button.setAttribute('style', 'display: block');
 
         // Display global start message.
         this.text.innerText = startMessage;
@@ -61,8 +63,9 @@ export default class RTest {
      * @param that: class this for nested use.
      */
     static run(e, that) {
-        e.target.setAttribute("id", "wait");
-        e.target.innerText = 'wait';
+        e.target.setAttribute("disabled", "true");
+        e.target.innerText = 'Wait';
+        that.test.setAttribute('style', 'background: #CF142B')
         that.countdown(e, that);
     }
 
@@ -81,7 +84,7 @@ export default class RTest {
         // shift in button position. Will be changed later.
         setTimeout(() => {that.text.innerText = "2..."}, 1000);
         setTimeout(() => {that.text.innerText = "1..."}, 2*1000);
-        setTimeout(() => {that.text.innerText = "0";}, 3*1000);
+        setTimeout(() => {that.text.innerText = "";}, 3*1000);
 
         // Somewhere between 500 ms to 3 seconds the test will activate
         setTimeout(() => {
@@ -98,7 +101,8 @@ export default class RTest {
             // On the assumption of speed of the process, the difference
             // between the event listener and activation of the button
             // won't be significant enough to affect the score.
-            e.target.setAttribute("id", "active");
+            e.target.removeAttribute('disabled');
+            that.test.setAttribute('style', 'background: #33A532');
             e.target.innerText = 'click';
 
             // Math floor and ceil used to keep random result as an integer.
@@ -117,6 +121,7 @@ export default class RTest {
         that.result = that.endTime - that.startTime;
         that.set(true);
         // Display result to user
+        that.test.setAttribute('style', 'background: #32A59E');
         that.text.innerText = `Your reaction time was: ${that.result} ms`;
     }
 
@@ -137,8 +142,8 @@ export default class RTest {
         this.done = bool;
         if(this.done === true) {
             this.doneListener();
-            this.replay.setAttribute('class', '');
-            this.button.setAttribute('class', 'hide');
+            this.replay.setAttribute('style', 'display: block');
+            this.button.setAttribute('style', 'display: none');
         }
     }
 

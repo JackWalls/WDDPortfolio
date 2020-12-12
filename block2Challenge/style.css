@@ -1,18 +1,176 @@
 body{
-    margin: 5em;
-}
-#wait {
-    background-color: #CF142B;
+    margin: 5% 20%;
 }
 
+/* Header Style */
+#currProfile {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 28px;
+}
+
+/* Style for test div */
+#test {
+    width: auto;
+    height: 30em;
+    background: #32A59E;
+    box-sizing: content-box;
+}
+
+#message{
+    height: 6em;
+    width: auto;
+    padding-top: 5em;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/* Buttons for the test */
 #active{
-    background-color: #33A532;
-}
-
-.hide {
+    background: #FFFFFF;
+    border: 1px solid #C7C5C5;
+    margin-top: .9em;
+    margin-left: auto;
+    margin-right: auto;
     display: none;
+    border-radius: 50%;
+    height: 7em;
+    width: 7em;
 }
 
 #replay {
-    background-color: #32A59E;
+    background: #FFFFFF;
+    border: 1px solid #C7C5C5;
+    margin-top: .9em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 50%;
+    height: 7em;
+    width: 7em;
 }
+
+#outerCircle {
+    height: 7.1em;
+    width: 7.1em;
+    margin-left: auto;
+    margin-right: auto;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+/* Elements for the Mean display*/
+#mean {
+    height: 1.5em;
+    width: 17em;
+    text-align: center;
+    text-decoration-line: underline;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+#meanBorder {
+    padding-top: .5em;
+    text-align: center;
+    height: 1.5em;
+    width: 17em;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    /*box-sizing: border-box;*/
+}
+
+/* Style for the save profile form */
+#save {
+    margin-left: 1em;
+    width: 4.2em;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+#save:active {
+    background: #C7C5C5;
+}
+
+#newName {
+    margin-top: .5em;
+    border-style: none none solid none;
+    border-bottom: 1px solid #000000;
+}
+
+::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+/* Label for both save profile and change profile inputs, style for select list */
+label {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+select {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* Style for result table */
+table {
+    border-collapse: collapse;
+    width: 12em;
+}
+
+table, th {
+    border: 1px solid #000000;
+}
+
+th {
+    background: rgba(50, 165, 158, 0.35);
+    padding: .5em 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+td {
+    border-bottom: 1px solid #000000;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    padding: .3em .4em;
+}
+

@@ -5,23 +5,25 @@ import Data from "./data.js";
 const button = document.getElementById("active");
 const text = document.getElementById("message");
 const replay = document.getElementById("replay");
+const test = document.getElementById("test")
 
 //
 const save = document.forms[0];
 
 // Get elements for Data
 const mean = document.getElementById("mean");
+const meanCount = document.getElementById("meanCount");
 const list = document.getElementById("profileList");
 const table = document.getElementById("resultTable");
 const currProfile = document.getElementById("currProfile");
 
 
 // Create instance of rTest.
-const rTest = new RTest(button, text, replay);
+const rTest = new RTest(button, text, replay, test);
 
 window.onload = () => {
     // Create instance of Data
-    const data = new Data(mean, table, list, currProfile);
+    const data = new Data(mean, meanCount, table, list, currProfile);
 
     list.addEventListener('change', event => {
         if(event.target.value !== '-1')
