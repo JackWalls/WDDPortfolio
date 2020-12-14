@@ -24,29 +24,32 @@
     </div>
 
     <br>
+    <table id="format">
+        <tr><td id="forms">
+            <div id="meanBorder">
+                <span id="meanCount">Take the test</span>
+            </div>
+            <p id="mean"></p>
 
-        <div id="meanBorder">
-            <span id="meanCount">Take the test</span>
-        </div>
-    <p id="mean"></p>
+            <form id="profile">
+                <label for="newName"> Enter your name to save a record: <br>
+                    <input type="text" id="newName" name="newName" placeholder="Enter Name...">
+                </label>
+                    <input type="submit" id="save" value="Save">
+            </form>
 
-    <form id="profile">
-        <label for="newName"> Enter your name to save a record: <br>
-        <input type="text" id="newName" name="newName" placeholder="Enter Name...">
-        </label>
-        <input type="submit" id="save" value="Save">
-    </form>
+            <br>
 
-    <br>
-
-    <label for="profileList">List of Profiles:
-        <select id="profileList" name="profileList">
-        </select>
-    </label>
-
-    <br><br>
-
-    <table id="resultTable">
+            <label for="profileList">List of Profiles:
+                <select id="profileList" name="profileList">
+                </select>
+            </label>
+        </td>
+            <td id="table">
+                <table id="resultTable">
+                </table>
+            </td>
+        </tr>
     </table>
 </body>
 </html>

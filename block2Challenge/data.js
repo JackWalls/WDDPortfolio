@@ -54,9 +54,9 @@ export default class Data {
      */
     updateTable(entry){
         let newRow = document.createElement('tr');
-        newRow.innerHTML = `<td style="text-align: left; width: 3.5em;">${this.record.length}</td>
-                            <td style="text-align: left">${entry}</td>
-                            <td style="text-align: right; border-right: 1px solid black;">milliseconds</td>`;
+        newRow.innerHTML = `<td class="resultCell" style="text-align: left; width: 3.5em;">${this.record.length}</td>
+                            <td class="resultCell" style="text-align: left">${entry}</td>
+                            <td class="resultCell" style="text-align: right; border-right: 1px solid black;">milliseconds</td>`;
         this.table.appendChild(newRow);
     }
 
@@ -126,12 +126,12 @@ export default class Data {
     }
 
     initTable() {
-        let rowEntry = `<tr><th colspan="3">Results:</th></tr>`;
+        let rowEntry = `<tr><th id="resultHeader" colspan="3">Results:</th></tr>`;
         if(this.record.length !== 0)
             this.record.results.forEach((result, i) => rowEntry +=
-                `<tr><td style="text-align: left; width: 3.5em;">${i+1}</td>
-                <td style="text-align: left">${result}</td>
-                <td style="text-align: right; border-right: 1px solid black;">milliseconds</td></tr>`);
+                `<tr><td class="resultCell" style="text-align: left; width: 3.5em;">${i+1}</td>
+                <td class="resultCell" style="text-align: left">${result}</td>
+                <td class="resultCell" style="text-align: right; border-right: 1px solid black;">milliseconds</td></tr>`);
         this.table.innerHTML = rowEntry;
     }
 }
