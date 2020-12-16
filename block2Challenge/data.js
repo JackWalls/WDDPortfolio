@@ -5,6 +5,7 @@ const key = "reactionTimeTest_by_JackWalls";
 
 export default class Data {
     constructor(mean, meanCount, table, list, currProfile) {
+        // If there is no stored values, initialize with an empty array.
         this.profiles = ls.getJSON(key) !== null ? ls.getJSON(key) : [];
         this.record = {name: '', results: [], length: 0};
         this.mean = mean;
@@ -36,6 +37,7 @@ export default class Data {
      * Update mean displayed to user.
      */
     updateMean(){
+        // If there are no results yet.
         if(this.record.length === 0) {
             this.meanCount.innerText = "Take the test";
             this.mean.innerText = '---';
@@ -49,22 +51,11 @@ export default class Data {
     }
 
     /************************************************************************************************
-     *
-     * @param entry
-     */
-    updateTable(entry){
-        let newRow = document.createElement('tr');
-        newRow.innerHTML = `<td class="resultCell" style="text-align: left; width: 3.5em;">${this.record.length}</td>
-                            <td class="resultCell" style="text-align: left">${entry}</td>
-                            <td class="resultCell" style="text-align: right; border-right: 1px solid black;">milliseconds</td>`;
-        this.table.appendChild(newRow);
-    }
-
-    /************************************************************************************************
      * Look through list of profiles and find the index, change record to profile.
      * @param username: Name given to search for.
      */
     changeProfile(username){
+        // Make sure we don't change to the current record.
         if(this.record.name !== username) {
             this.index = this.profiles.findIndex((record) => record.name === username);
             this.record = this.profiles[this.index];
@@ -81,7 +72,7 @@ export default class Data {
      * @returns {number}: Boolean check, 1 successful save, 0 on failure.
      */
     saveProfile(name) {
-        // Only add if there is not record of the same name
+        // Only add if there is not record of the same name and not an empty string
         if((this.profiles.find(record => record.name === name) === undefined) && name !== '') {
             if(this.index === -1) {
                 this.record.name = name;
@@ -89,6 +80,8 @@ export default class Data {
                 this.index = this.profiles.length - 1;
                 ls.setJSON(key, JSON.stringify(this.profiles));
                 this.updateList(this.record);
+
+                // Update name on html
                 this.currProfile.innerText = this.record.name;
             }
             else {
@@ -105,6 +98,7 @@ export default class Data {
      * On construct, update list with records from profiles.
      */
     initList() {
+        // Have -1 be the value for the placeholder to avoid changing profile
         let html ='<option value="-1">--Select Profile--</option>';
         this.profiles.forEach(record => html += `<option value="${record.name}">${record.name}</option>`);
         this.list.innerHTML = html;
@@ -125,13 +119,30 @@ export default class Data {
 
     }
 
+    /************************************************************************************************
+     * Creates the table for results. Used for start of program and change of profile.
+     */
     initTable() {
         let rowEntry = `<tr><th id="resultHeader" colspan="3">Results:</th></tr>`;
+
+        // If no entries, then don't create any rows yet.
         if(this.record.length !== 0)
             this.record.results.forEach((result, i) => rowEntry +=
                 `<tr><td class="resultCell" style="text-align: left; width: 3.5em;">${i+1}</td>
                 <td class="resultCell" style="text-align: left">${result}</td>
                 <td class="resultCell" style="text-align: right; border-right: 1px solid black;">milliseconds</td></tr>`);
         this.table.innerHTML = rowEntry;
+    }
+
+    /************************************************************************************************
+     * Used to add a new row to the table to update it with the newest result.
+     * @param entry: New result to add to table.
+     */
+    updateTable(entry){
+        let newRow = document.createElement('tr');
+        newRow.innerHTML = `<td class="resultCell" style="text-align: left; width: 3.5em;">${this.record.length}</td>
+                            <td class="resultCell" style="text-align: left">${entry}</td>
+                            <td class="resultCell" style="text-align: right; border-right: 1px solid black;">milliseconds</td>`;
+        this.table.appendChild(newRow);
     }
 }
