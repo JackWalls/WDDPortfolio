@@ -46,7 +46,7 @@ const w5Links = [
     {label: "JS Chapter 10 Notes", url: "ch10Notes.html"}
 ];
 
-const w6Links = [];
+//const w6Links = [];
 
 const w7Links = [
     {label: "JS Chapter 11 Notes", url: "ch11Notes.html"},
@@ -68,7 +68,9 @@ const w9Links = [
 
 const finalLinks = [
     {label: "Reaction Test", url: "reactionTest.html"},
-    {label: "Week 10 Notes", url: "week10/week10Notes.html"}
+    {label: "Week 10 Notes", url: "week10/week10Notes.html"},
+    {label: "Self Evaluation Video", url: "week10/video.html"}
+
 ];
 
 /****************************************************************
@@ -82,7 +84,7 @@ const finalLinks = [
  *  */
  function createList(){
     // Empty array to make a shallow copy.
-    let links = [];
+    let links;
 
     // get title value
     const title = document.title;
