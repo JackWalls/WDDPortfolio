@@ -94,6 +94,7 @@ export default class RTest {
             // Activate button
             e.target.addEventListener('click', function handler(event) {
                     // Call the endFunction first before removing listener for accuracy.
+                    that.endTime = new Date();
                     RTest.endFunction(event, that);
                     event.target.removeEventListener('click', handler);
             });
@@ -117,7 +118,6 @@ export default class RTest {
      * @param that: class this for nested use.
      */
     static endFunction(e, that) {
-        that.endTime = new Date();
         that.result = that.endTime - that.startTime;
         that.set(true);
         // Display result to user
