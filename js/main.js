@@ -10,7 +10,8 @@ const mLinks = [
     {label: "Week 7", url: "week7/index.html"},
     {label: "Week 8", url: "week8/index.html"},
     {label: "Week 9", url: "week9/index.html"},
-    {label: "Final Weeks", url: "block2Challenge/index.html"}
+    {label: "Final Weeks", url: "block2Challenge/index.html"},
+    {label: "Creed Document", url: "CreedDocument/index.html"}
 ];
 
 // Week 1 page
@@ -73,6 +74,15 @@ const finalLinks = [
 
 ];
 
+const creedLinks =[
+    {label: "Beliefs", url: "belief.html"},
+    {label: "Mentors", url: "mentor.html"},
+    {label: "Uniqueness", url: "unique.html"},
+    {label: "Values", url: "value.html"},
+    {label: "Goals", url: "goal.html"},
+    {label: "Influence", url: "influence.html"}
+];
+
 /****************************************************************
  *  This function takes a number to select an array of links to
  *  then put those links in an ordered list.
@@ -125,6 +135,9 @@ const finalLinks = [
                 break;
             case 10:
                 links = finalLinks;
+                break;
+            case 14:
+                links = creedLinks;
                 break;
             default:
                 links = mLinks;
