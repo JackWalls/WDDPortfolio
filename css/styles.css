@@ -8,6 +8,14 @@ h2 {
     text-align: center;
     color: Black;
 }
+
+h3 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    color: Black;
+}
 ol {
     list-style-type: none;
 }
@@ -41,4 +49,21 @@ a:link, a:visited {
 
 a:hover, a:active {
     background-color: #4d4d4d;
+}
+
+.creed {
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+}
+
+.in {
+    display: inline;
+    margin: 5px;
+}
+
+.MS {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }

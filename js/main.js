@@ -150,7 +150,10 @@ const creedLinks =[
     // For loop to go through chosen array
     for(let i = 0; i < links.length; i++){
 
+        if(choice[0] === "14")
+            text += "<li class='in'><a href='" + links[i].url + "'>" + links[i].label + "</a></li>";
         // Create the list element and put it in text
+        else
             text += "<li><a href='" + links[i].url + "'>" + links[i].label + "</a></li>";
     }
 
