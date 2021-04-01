@@ -59,6 +59,7 @@ a:hover, a:active {
 
 .in {
     display: inline;
+    display: -moz-inline-block;
     margin: 5px;
 }
 
